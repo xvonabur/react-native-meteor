@@ -1,4 +1,4 @@
-import Minimongo from 'minimongo-cache';
+import Minimongo from '@xvonabur/minimongo-cache';
 import Trackr from 'trackr';
 import isReactNative from './isReactNative';
 
