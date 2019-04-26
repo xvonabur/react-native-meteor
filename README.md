@@ -1,7 +1,7 @@
 
 
-# @socialize/react-native-meteor
- [![react-native-meteor](http://img.shields.io/npm/dm/@socialize/react-native-meteor.svg)](https://www.npmjs.org/package/@socialize/react-native-meteor) [![npm version](https://badge.fury.io/js/%40socialize%2Freact-native-meteor.svg)](https://badge.fury.io/js/%40socialize%2Freact-native-meteor) [![Dependency Status](https://david-dm.org/copleykj/react-native-meteor/status.svg)](https://david-dm.org/copleykj/react-native-meteor) [![Gitter Chat](https://img.shields.io/gitter/room/SocializeJs/Lobby.svg)](https://gitter.im/SocializeJs/Lobby)
+# @xvonabur/react-native-meteor
+ [![react-native-meteor](http://img.shields.io/npm/dm/@xvonabur/react-native-meteor.svg)](https://www.npmjs.org/package/@xvonabur/react-native-meteor) [![npm version](https://badge.fury.io/js/%40xvonabur%2Freact-native-meteor.svg)](https://badge.fury.io/js/%40xvonabur%2Freact-native-meteor) [![Dependency Status](https://david-dm.org/xvonabur/react-native-meteor/status.svg)](https://david-dm.org/xvonabur/react-native-meteor)
 
  This project was adapted from [react-native-meteor](https://github.com/inProgress-team/react-native-meteor) by inProgress Team to be more up to date and focused. This documentation has been revised to be more coherent, dependencies have been updated, and the API has been brought more in-line with Meteor.
 
@@ -9,7 +9,7 @@
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [@socialize/react-native-meteor](#socializereact-native-meteor)
+- [@xvonabur/react-native-meteor](#xvonaburreact-native-meteor)
   - [Supporting The Project](#supporting-the-project)
   - [Installation And Setup](#installation-and-setup)
     - [Android](#android)
@@ -32,18 +32,10 @@
 
 <!-- /TOC -->
 
-## Supporting The Project
-
-In the spirit of keeping this and all of the packages in the [Socialize](https://atmospherejs.com/socialize) set alive, I ask that if you find this package useful, please donate to it's development.
-
-![Litecoin](http://gdurl.com/xnOe)
-
-[Patreon](https://www.patreon.com/user?u=4866588) / [Paypal](https://www.paypal.me/copleykj)
-
 ## Installation And Setup
 
 ```sh
-$ npm i --save @socialize/react-native-meteor
+$ npm i --save @xvonabur/react-native-meteor
 ```
 
 ### Android
@@ -121,9 +113,9 @@ These variables can be used inside `withTracker`. They will be populated into yo
 * [Meteor.subscribe()](http://docs.meteor.com/#/full/meteor_subscribe)
 
 ```javascript
-import Meteor, { Tracker } from '@socialize/react-native-meteor';
+import Meteor, { Tracker } from '@xvonabur/react-native-meteor';
 
-const handle = Meteor.subscribe('socialize.friends');
+const handle = Meteor.subscribe('xvonabur.friends');
 
 Tracker.autorun(() =>{
     if(handle.ready()){
@@ -145,9 +137,9 @@ These methods work offline. That means that elements are correctly updated offli
 You need pass the `cursoredFind` option when you get your collection if you want to use cursor-like method:
 
 ```javascript
-import { Mongo } from '@socialize/react-native-meteor';
+import { Mongo } from '@xvonabur/react-native-meteor';
 
-Mongo.Collection("collectionName", { cursoredFind: true });
+new Mongo.Collection("collectionName", { cursoredFind: true });
 ```
 
 Or you can simply use `find()` to get an array of documents. The option default to false for backward compatibility. Cursor methods are available to share code more easily between a react-native app and a standard Meteor app.
