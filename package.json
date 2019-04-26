@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/copleykj/react-native-meteor.git"
+    "url": "git+https://github.com/xvonabur/react-native-meteor.git"
   },
   "keywords": [
     "ddp",
@@ -22,9 +22,9 @@
   "author": "Kelly Copley",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/copleykj/react-native-meteor/issues"
+    "url": "https://github.com/xvonabur/react-native-meteor/issues"
   },
-  "homepage": "https://github.com/copleykj/react-native-meteor#readme",
+  "homepage": "https://github.com/xvonabur/react-native-meteor#readme",
   "dependencies": {
     "@xvonabur/minimongo-cache": "^0.1.2",
     "base-64": "^0.1.0",
