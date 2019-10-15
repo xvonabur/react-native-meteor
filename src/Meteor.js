@@ -18,7 +18,7 @@ import Accounts from './user/Accounts';
 
 let NetInfo;
 if (isReactNative) {
-    NetInfo = require('react-native').NetInfo;  // eslint-disable-line
+    NetInfo = require("@react-native-community/netinfo");  // eslint-disable-line
 }
 
 
@@ -119,11 +119,13 @@ module.exports = {
             ...options,
         });
 
-        NetInfo.isConnected.addEventListener('connectionChange', (isConnected) => {
-            if (isConnected && Data.ddp.autoReconnect) {
-                Data.ddp.connect();
-            }
-        });
+        if (NetInfo) {
+            NetInfo.addEventListener(state => {
+                if (state.isConnected && Data.ddp.autoReconnect) {
+                    Data.ddp.connect();
+                }
+            });
+        }
 
         Data.ddp.on('connected', () => {
             Data.notify('change');
