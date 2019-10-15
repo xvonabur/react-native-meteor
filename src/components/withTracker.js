@@ -102,7 +102,7 @@ class MeteorDataManager {
 }
 
 export const ReactMeteorData = {
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         Data.waitDdpReady(()=>{
             this.data = {};
             this._meteorDataManager = new MeteorDataManager(this);
@@ -111,7 +111,7 @@ export const ReactMeteorData = {
         });
     },
 
-    componentWillUpdate(nextProps, nextState) {
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
         const saveProps = this.props;
         const saveState = this.state;
         let newData;

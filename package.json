@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/xvonabur/react-native-meteor#readme",
   "dependencies": {
+    "@react-native-community/netinfo": "^4.4.0",
     "@xvonabur/minimongo-cache": "^0.1.2",
     "base-64": "^0.1.0  ",
     "crypto-js": "^3.1.9-1",

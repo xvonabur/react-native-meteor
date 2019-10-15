@@ -45,6 +45,16 @@ export default class ReactiveDict {
 
     Data.notify('change');
   }
+  clear() {
+    this.keys = {};
+    Data.notify('change');
+  }
+  delete(key) {
+    if (this.keys.hasOwnProperty(key)) {
+      delete this.keys[key];
+      Data.notify('change');
+    }
+  }
   setDefault(key, value) {
     // for now, explicitly check for undefined, since there is no
     // ReactiveDict.clear().  Later we might have a ReactiveDict.clear(), in which case
