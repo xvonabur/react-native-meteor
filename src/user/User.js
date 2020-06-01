@@ -3,12 +3,13 @@ import { hashPassword } from '../../lib/utils';
 import call from '../Call';
 import { Collection } from '../Collection';
 import isReactNative from '../isReactNative';
+import AsyncStorage from '@react-native-community/async-storage';
 
 let Storage;
 
 if (isReactNative) {
     // eslint-disable-next-line
-    Storage = require('react-native').AsyncStorage;
+    Storage = AsyncStorage;
 } else {
     Storage = localStorage;
 }
@@ -40,8 +41,8 @@ module.exports = {
             typeof callback === 'function' && callback(err);
         });
     },
-    handleLogout() {
-        Storage.removeItem(TOKEN_KEY);
+    async handleLogout() {
+        await Storage.removeItem(TOKEN_KEY);
         Data._tokenIdSaved = null;
         this._userIdSaved = null;
     },
@@ -91,9 +92,9 @@ module.exports = {
         this._isLoggingIn = false;
         Data.notify('loggingIn');
     },
-    _handleLoginCallback(err, result) {
+    async _handleLoginCallback(err, result) {
         if (!err) { // save user id and token
-            Storage.setItem(TOKEN_KEY, result.token);
+            await Storage.setItem(TOKEN_KEY, result.token);
             Data._tokenIdSaved = result.token;
             this._userIdSaved = result.id;
             Data.notify('onLogin');
@@ -118,8 +119,8 @@ module.exports = {
     getAuthToken() {
         return Data._tokenIdSaved;
     },
-    getAuthTokenFromStorage() {
-        return Storage.getItem(TOKEN_KEY);
+    async getAuthTokenFromStorage() {
+        return await Storage.getItem(TOKEN_KEY);
     },
     async _loadInitialUser() {
         let value = null;

@@ -4,6 +4,7 @@
   "description": "Full Meteor Client for React Native",
   "main": "src/Meteor.js",
   "scripts": {
+    "lint": "node_modules/eslint/bin/eslint.js . --fix",
     "test": "mocha --require @babel/register --require test/setup --recursive",
     "upload": "npm publish --access=public"
   },
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/xvonabur/react-native-meteor#readme",
   "dependencies": {
+    "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/netinfo": "^5.9.2",
     "@xvonabur/minimongo-cache": "^0.1.2",
     "base-64": "^0.1.0  ",
