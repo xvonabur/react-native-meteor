@@ -45,7 +45,7 @@
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
     "metro-react-native-babel-preset": "^0.53.1",
-    "mocha": "^6.1.0",
+    "mocha": "^6.2.3",
     "mock-socket": "^8.0.0",
     "sinon": "^7.3.0"
   },
