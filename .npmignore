@@ -1,1 +1,7 @@
-example
+**/*
+!lib/*.js
+!src/
+!package.json
+!package-lock.json
+!babel.config.js
+!LICENSE
