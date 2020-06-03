@@ -1,6 +1,6 @@
 **/*
 !lib/*.js
-!src/
+!src/**/*
 !package.json
 !package-lock.json
 !babel.config.js
