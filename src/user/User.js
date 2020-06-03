@@ -56,6 +56,8 @@ module.exports = {
             user: selector,
             password: hashPassword(password),
         }, (err, result) => {
+            this._endLoggingIn();
+
             this._handleLoginCallback(err, result);
 
             typeof callback === 'function' && callback(err);
@@ -75,6 +77,8 @@ module.exports = {
     _login(user, callback) {
         this._startLoggingIn();
         this.call('login', user, (err, result) => {
+            this._endLoggingIn();
+
             this._handleLoginCallback(err, result);
 
             typeof callback === 'function' && callback(err);
@@ -94,7 +98,6 @@ module.exports = {
             Data._tokenIdSaved = result.token;
             this._userIdSaved = result.id;
             Data.notify('onLogin');
-            this._endLoggingIn();
         } else {
             Data.notify('onLoginFailure');
             this.handleLogout();
@@ -106,6 +109,7 @@ module.exports = {
         if (value !== null) {
             this._startLoggingIn();
             call('login', { resume: value }, (err, result) => {
+                this._endLoggingIn();
                 this._handleLoginCallback(err, result);
             });
         } else {
